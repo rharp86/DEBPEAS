@@ -1,8 +1,10 @@
 #!/bin/bash
 # Simple Privilege Escalation Enumeration Script for Debian Systems
 
-# Define the log file
-LOG_FILE="debpeas_$(date +'%Y%m%d_%H%M%S').txt"
+# Capture the hostname
+HOST=$(hostname)
+# Define the log file with hostname and timestamp
+LOG_FILE="debpeas_${HOST}_$(date +'%Y%m%d_%H%M%S').txt"
 
 # Redirect all output to both the console and the log file
 exec > >(tee -i "$LOG_FILE") 2>&1
